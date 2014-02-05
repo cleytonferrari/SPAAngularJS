@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp" ng-controller="LayoutController">
+<head>
+    <title>Karol Camp - [AngularJS] {{tituloPagina}}</title>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/underscore.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-cookies.js"></script>
+    <script src="App/app.js"></script>
+    <script src="App/Controllers/LayoutController.js"></script>
+    <script src="App/Controllers/PainelController.js"></script>
+    <script src="App/Controllers/HomeController.js"></script>
+    <script src="App/Controllers/SalaController.js"></script>
+    <script src="App/Controllers/SalaDetalheController.js"></script>
+    <script src="App/Controllers/SalaCadastrarController.js"></script>
+    <script src="App/Controllers/SalaExcluirController.js"></script>
+    <script src="App/Controllers/LoginController.js"></script>
+    <script src="App/Services/Sala.js"></script>
+    <script src="App/Services/Autenticacao.js"></script>
+    <script src="App/Services/AccessLevel.js"></script>
+    <script src="App/Services/UsuarioLogado.js"></script>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+
+</head>
+<body>
+    <div id="loader" class="alert alert-info" style="position: absolute; top: 5px; left: 50%; z-index: 10000; display: none; height: 44px;">
+        <h4>Aguarde...</h4>
+    </div>
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">Karol Camp - SPA [AngularJS]</a>
+            </div>
+
+            <div class="collapse navbar-collapse header-collapse">
+                <ul class="nav navbar-nav" data-nivel-acesso='logado'>
+                    <li data-active-nav><a href="#/Trilha">Trilha</a></li>
+                    <li data-active-nav><a href="#/Sala">Sala</a></li>
+                    <li data-active-nav><a href="#/Palestrante">Palestrante</a></li>
+                    <li data-active-nav><a href="#/Palestra">Palestra</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/Login" ng-show="!user.userName">Entrar </a></li>
+                    <li class="dropdown" ng-show="user.userName">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">{{user.userName}} <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li data-nivel-acesso='logado'><a href="javascript:;" ng-click="logout()">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" ng-view></div>
+
+    <footer class="container">
+        <p class="navbar-text navbar-right">Código fonte em <a href="https://github.com/cleytonferrari/karolcamp" target="_blank">GitHub</a></p>
+    </footer>
+
+</body>
+</html>

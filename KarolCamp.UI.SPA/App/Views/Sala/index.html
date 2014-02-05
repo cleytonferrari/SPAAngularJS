@@ -1,0 +1,37 @@
+﻿<div class="page-header">
+    <h1>Sala <small>organize as salas de suas palestras</small></h1>
+    <a href="#/Sala/Cadastrar" class="btn btn-sm btn-primary">Nova sala</a>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Salas cadastradas
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome da sala</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr ng-repeat="sala in Salas">
+                            <td style="width: 50px">{{$index + 1}}</td>
+                            <td><a href="#/Sala/{{sala.Id}}">{{sala.Nome}}</a></td>
+                            <td style="width: 100px">
+                                <a class="btn btn-info btn-sm" href="#/Sala/{{sala.Id}}/Cadastrar"><span class="glyphicon glyphicon-edit"></span></a>
+                                <a class="btn btn-danger btn-sm" href="#/Sala/{{sala.Id}}/Excluir"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

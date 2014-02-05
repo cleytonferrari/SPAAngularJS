@@ -1,0 +1,19 @@
+﻿<div class="page-header">
+    <h1>Sala <small>organize as salas onde será ministradas as palestras</small></h1>
+    <a href="#/Sala/Cadastrar" class="btn btn-sm btn-primary">Nova sala</a>
+</div>
+<div class="alert alert-danger">
+    <strong>Atenção!</strong> Deseja realmente excluir este registro?
+</div>
+<fieldset>
+    <legend>Excluir sala</legend>
+    <div class="form-group">
+        <strong>Nome: </strong> {{Sala.Nome}}
+    </div>
+</fieldset>
+<hr />
+
+<p>
+    <button class="btn btn-sm btn-info" ng-click="excluir()">Excluir</button>
+    <a class="btn" href="#/Sala">Cancelar</a>
+</p>
