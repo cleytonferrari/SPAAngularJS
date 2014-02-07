@@ -1,0 +1,22 @@
+﻿<div class="page-header">
+    <h1>Palestrante <small>organize os palestrantes de suas palestras</small></h1>
+    <a href="#/Palestrante/Cadastrar" class="btn btn-sm btn-primary">Novo palestrante</a>
+</div>
+<div class="alert alert-danger">
+    <strong>Atenção!</strong> Deseja realmente excluir este registro?
+</div>
+<fieldset>
+    <legend>Excluir palestrante</legend>
+    <div class="form-group">
+        <strong>Nome: </strong> {{Palestrante.Nome}}
+    </div>
+    <div class="form-group">
+        <strong>Twitter: </strong> {{Palestrante.Twitter}}
+    </div>
+</fieldset>
+<hr />
+
+<p>
+    <button class="btn btn-sm btn-info" ng-click="excluir()">Excluir</button>
+    <a class="btn" href="#/Palestrante">Cancelar</a>
+</p>

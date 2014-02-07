@@ -63,6 +63,10 @@
   <ItemGroup>
     <Content Include="App\app.js" />
     <Content Include="App\Controllers\Painel\PainelController.js" />
+    <Content Include="App\Controllers\Palestrante\PalestranteCadastrarController.js" />
+    <Content Include="App\Controllers\Palestrante\PalestranteController.js" />
+    <Content Include="App\Controllers\Palestrante\PalestranteDetalheController.js" />
+    <Content Include="App\Controllers\Palestrante\PalestranteExcluirController.js" />
     <Content Include="App\Controllers\Trilha\TrilhaCadastrarController.js" />
     <Content Include="App\Controllers\Trilha\TrilhaController.js" />
     <Content Include="App\Controllers\Trilha\TrilhaDetalheController.js" />
@@ -81,6 +85,10 @@
     <Content Include="App\Views\Painel\index.html" />
     <Content Include="App\Views\Login\index.html" />
     <Content Include="App\Views\Home\index.html" />
+    <Content Include="App\Views\Palestrante\cadastrar.html" />
+    <Content Include="App\Views\Palestrante\detalhe.html" />
+    <Content Include="App\Views\Palestrante\excluir.html" />
+    <Content Include="App\Views\Palestrante\index.html" />
     <Content Include="App\Views\Trilha\cadastrar.html" />
     <Content Include="App\Views\Trilha\detalhe.html" />
     <Content Include="App\Views\Trilha\excluir.html" />

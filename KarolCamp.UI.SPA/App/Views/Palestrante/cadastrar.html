@@ -1,0 +1,38 @@
+﻿<div class="page-header">
+    <h1>Palestrante <small>organize os palestrantes de suas palestras</small></h1>
+</div>
+
+<form name="palestranteForm" ng-submit="cadastrar()" novalidate>
+    <fieldset>
+        <legend>Novo Palestrante</legend>
+        <div class="form-group " ng-class="{ 'has-error' : palestranteForm.nome.$invalid && !palestranteForm.nome.$pristine }">
+            <label>Nome</label><br />
+            <input type="text" id="nome" name="nome" ng-model="palestrante.Nome" placeholder="Nome do palestrante" ng-minlength="2" ng-maxlength="25" required>
+            <p ng-show="palestranteForm.nome.$error.minlength" class="help-block">Nome é muito curto.</p>
+            <p ng-show="palestranteForm.nome.$error.maxlength" class="help-block">Nome é muito longo.</p>
+        </div>
+        <div class="form-group " ng-class="{ 'has-error' : palestranteForm.twitter.$invalid && !palestranteForm.twitter.$pristine }">
+            <label>Twitter</label><br />
+            <input type="text" id="twitter" name="twitter" ng-model="palestrante.Twitter" placeholder="Twitter do palestrante" ng-minlength="2">
+            <p ng-show="palestranteForm.twitter.$error.minlength" class="help-block">Twitter é muito curto.</p>
+        </div>
+        <div class="form-group " ng-class="{ 'has-error' : palestranteForm.bio.$invalid && !palestranteForm.bio.$pristine }">
+            <label>Biografia</label><br />
+            <textarea id="bio" name="bio" ng-model="palestrante.Bio" placeholder="Biografia do palestrante" ng-minlength="10" cols="30" rows="4" required></textarea>
+            <p ng-show="palestranteForm.bio.$error.minlength" class="help-block">Biografia é muito curta.</p>
+        </div>
+        
+        <div class="form-group ">
+            <label>ArquivoId</label><br />
+            <input type="text" id="fotoid" name="fotoid" ng-model="palestrante.FotoId" >
+        </div>
+
+        <hr />
+        <p>
+            <input type="hidden" id="id" name="id" ng-model="palestrante.Id" />
+            <button class="btn btn-sm btn-info" ng-disabled="palestranteForm.$invalid">Cadastrar</button>
+            <a class="btn" href="#/Palestrante">Cancelar</a>
+        </p>
+    </fieldset>
+</form>
+

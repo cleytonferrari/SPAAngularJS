@@ -54,6 +54,7 @@ namespace KarolCamp.Repositorio.Mongo
 
         public void ExcluirArquivo(string id)
         {
+            //Todo: Verificar se o arquivo existe no banco! antes de tentar excluir
             var mySetting = new MongoGridFSSettings();
             var gfs = new MongoGridFS(server, database.Name, mySetting);
             gfs.Delete(Query.EQ("_id", new BsonObjectId(new ObjectId(id))));

@@ -1,0 +1,25 @@
+﻿<div class="page-header">
+    <h1>Palestrante <small>organize os palestrantes de suas palestras</small></h1>
+    <a href="#/Palestrante/Cadastrar" class="btn btn-sm btn-primary">Novo palestrante</a>
+</div>
+
+<fieldset>
+    <legend>Detalhes do palestrante</legend>
+    <div class="form-group">
+        <strong>Nome: </strong> {{Palestrante.Nome}}
+    </div>
+    <div class="form-group">
+        <strong>Twitter: </strong> {{Palestrante.Twitter}}
+    </div>
+    <div class="form-group">
+        <strong>Biografia: </strong> {{Palestrante.Bio}}
+    </div>
+    <div class="form-group">
+        <strong>FotoId: </strong> {{Palestrante.FotoId}}
+    </div>
+</fieldset>
+<hr />
+<p>
+    <a href="#/Palestrante/{{Palestrante.Id}}/Cadastrar" class="btn btn-sm btn-info">Editar</a>
+    <a href="#/Palestrante"> Voltar</a>
+</p>

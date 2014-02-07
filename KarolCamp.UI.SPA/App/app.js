@@ -68,6 +68,31 @@ myApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $http
             controller: 'TrilhaDetalheController',
             access: 'suporte'
         })
+        .when('/Palestrante', {
+            templateUrl: 'App/Views/Palestrante/index.html',
+            controller: 'PalestranteController',
+            access: 'logado'
+        })
+        .when('/Palestrante/Cadastrar', {
+            templateUrl: 'App/Views/Palestrante/cadastrar.html',
+            controller: 'PalestranteCadastrarController',
+            access: 'logado'
+        })
+        .when('/Palestrante/:Id/Excluir', {
+            templateUrl: 'App/Views/Palestrante/excluir.html',
+            controller: 'PalestranteExcluirController',
+            access: 'logado'
+        })
+        .when('/Palestrante/:Id/Cadastrar', {
+            templateUrl: 'App/Views/Palestrante/cadastrar.html',
+            controller: 'PalestranteCadastrarController',
+            access: 'logado'
+        })
+        .when('/Palestrante/:Id', {
+            templateUrl: 'App/Views/Palestrante/detalhe.html',
+            controller: 'PalestranteDetalheController',
+            access: 'suporte'
+        })
 
     $httpProvider.interceptors.push(function ($q, $location) {
         return {

@@ -14,6 +14,7 @@
 
     return {
         Sala: resourcePadrao('salas'),
-        Trilha: resourcePadrao('trilhas')
+        Trilha: resourcePadrao('trilhas'),
+        Palestrante: resourcePadrao('palestrantes')
     };
 }]);
