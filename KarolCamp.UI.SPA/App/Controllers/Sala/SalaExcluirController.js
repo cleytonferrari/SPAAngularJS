@@ -1,7 +1,8 @@
-﻿myApp.controller('SalaExcluirController', ['$scope', '$location', '$routeParams', 'Sala', function ($scope, $location, $routeParams, Sala) {
+﻿myApp.controller('SalaExcluirController', ['$scope', '$location', '$routeParams', 'Api',
+    function ($scope, $location, $routeParams, api) {
     
     var init = function () {
-        $scope.Sala = Sala.get({ Id: $routeParams.Id });
+        $scope.Sala = api.Sala.get({ Id: $routeParams.Id });
     };
 
     $scope.excluir = function () {  

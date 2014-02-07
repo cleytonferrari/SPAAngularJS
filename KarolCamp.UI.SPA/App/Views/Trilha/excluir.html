@@ -1,0 +1,19 @@
+﻿<div class="page-header">
+    <h1>Trilha <small>organize as trilhas do seu evento</small></h1>
+    <a href="#/Trilha/Cadastrar" class="btn btn-sm btn-primary">Nova trilha</a>
+</div>
+<div class="alert alert-danger">
+    <strong>Atenção!</strong> Deseja realmente excluir este registro?
+</div>
+<fieldset>
+    <legend>Excluir trilha</legend>
+    <div class="form-group">
+        <strong>Nome: </strong> {{Trilha.Nome}}
+    </div>
+</fieldset>
+<hr />
+
+<p>
+    <button class="btn btn-sm btn-info" ng-click="excluir()">Excluir</button>
+    <a class="btn" href="#/Trilha">Cancelar</a>
+</p>

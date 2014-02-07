@@ -9,12 +9,12 @@ using KarolCamp.Dominio;
 
 namespace KarolCamp.API.Controllers
 {
+    [Authorize()]
     public class SalasController : ApiController
     {
-        [Authorize()]
         public IEnumerable<Sala> Get()
         {
-            return Construtor.SalaAplicacaoMongo().ListarTodos().ToList();
+            return Construtor.SalaAplicacaoMongo().ListarTodos().OrderBy(x => x.Nome).ToList();
         }
 
         public Sala Get(string id)
@@ -49,7 +49,7 @@ namespace KarolCamp.API.Controllers
             app.Salvar(sala);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
-        
+
         public HttpResponseMessage Delete(string id)
         {
             var app = Construtor.SalaAplicacaoMongo();

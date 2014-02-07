@@ -14,7 +14,7 @@ namespace KarolCamp.API.Controllers
     {
         public IEnumerable<Trilha> Get()
         {
-            return Construtor.TrilhaAplicacaoMongo().ListarTodos().ToList();
+            return Construtor.TrilhaAplicacaoMongo().ListarTodos().OrderBy(x => x.Nome).ToList();
         }
 
         public Trilha Get(string id)
@@ -22,7 +22,6 @@ namespace KarolCamp.API.Controllers
             return Construtor.TrilhaAplicacaoMongo().ListarPorId(id);
         }
 
-        [Authorize(Roles = "administrador")]
         public HttpResponseMessage Post(Trilha trilha)
         {
             if (!ModelState.IsValid)

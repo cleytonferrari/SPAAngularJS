@@ -1,0 +1,37 @@
+﻿<div class="page-header">
+    <h1>Trilha <small>organize as trilhas do seu evento</small></h1>
+    <a href="#/Trilha/Cadastrar" class="btn btn-sm btn-primary">Nova trilha</a>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Trilhas cadastradas
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome da trilha</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr ng-repeat="trilha in Trilhas">
+                            <td style="width: 50px">{{$index + 1}}</td>
+                            <td><a href="#/Trilha/{{trilha.Id}}">{{trilha.Nome}}</a></td>
+                            <td style="width: 100px">
+                                <a class="btn btn-info btn-sm" href="#/Trilha/{{trilha.Id}}/Cadastrar"><span class="glyphicon glyphicon-edit"></span></a>
+                                <a class="btn btn-danger btn-sm" href="#/Trilha/{{trilha.Id}}/Excluir"><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

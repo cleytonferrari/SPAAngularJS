@@ -42,7 +42,32 @@ myApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $http
             templateUrl: 'App/Views/Sala/detalhe.html',
             controller: 'SalaDetalheController',
             access: 'suporte'
-        });
+        })
+        .when('/Trilha', {
+            templateUrl: 'App/Views/Trilha/index.html',
+            controller: 'TrilhaController',
+            access: 'logado'
+        })
+        .when('/Trilha/Cadastrar', {
+            templateUrl: 'App/Views/Trilha/cadastrar.html',
+            controller: 'TrilhaCadastrarController',
+            access: 'logado'
+        })
+        .when('/Trilha/:Id/Excluir', {
+            templateUrl: 'App/Views/Trilha/excluir.html',
+            controller: 'TrilhaExcluirController',
+            access: 'logado'
+        })
+        .when('/Trilha/:Id/Cadastrar', {
+            templateUrl: 'App/Views/Trilha/cadastrar.html',
+            controller: 'TrilhaCadastrarController',
+            access: 'logado'
+        })
+        .when('/Trilha/:Id', {
+            templateUrl: 'App/Views/Trilha/detalhe.html',
+            controller: 'TrilhaDetalheController',
+            access: 'suporte'
+        })
 
     $httpProvider.interceptors.push(function ($q, $location) {
         return {
@@ -56,7 +81,7 @@ myApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $http
             }
         };
     });
-    
+
 }]).run(['$rootScope', '$location', '$http', 'Autenticacao', function ($rootScope, $location, $http, Autenticacao) {
 
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
