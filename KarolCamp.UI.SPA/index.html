@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html ng-app="MyApp" ng-controller="LayoutController">
 <head>
-    <title>Karol Camp - [AngularJS] {{tituloPagina}}</title>
+    <title>{{appName}} {{versao}} {{tituloPagina}}</title>
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/underscore.min.js"></script>
@@ -9,38 +9,61 @@
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-resource.js"></script>
     <script src="Scripts/angular-cookies.js"></script>
-    <script src="App/app.js"></script>
-    <script src="App/Controllers/Shared/LayoutController.js"></script>
-    <script src="App/Controllers/Painel/PainelController.js"></script>
-    <script src="App/Controllers/Home/HomeController.js"></script>
 
-    <script src="App/Controllers/Sala/SalaController.js"></script>
-    <script src="App/Controllers/Sala/SalaDetalheController.js"></script>
-    <script src="App/Controllers/Sala/SalaCadastrarController.js"></script>
-    <script src="App/Controllers/Sala/SalaExcluirController.js"></script>
+    <script src="App/app.module.js"></script>
+    <script src="App/app.config.js"></script>
+    <script src="App/app.routers.js"></script>
+    <script src="App/app.constants.js"></script>
+    <script src="App/layout/layout.controller.js"></script>
+    <script src="App/painel/painel.controller.js"></script>
+    <script src="App/home/home.controller.js"></script>
 
-    <script src="App/Controllers/Trilha/TrilhaController.js"></script>
-    <script src="App/Controllers/Trilha/TrilhaDetalheController.js"></script>
-    <script src="App/Controllers/Trilha/TrilhaCadastrarController.js"></script>
-    <script src="App/Controllers/Trilha/TrilhaExcluirController.js"></script>
+    <script src="App/sala/sala.service.js"></script>
 
-    <script src="App/Controllers/Palestrante/PalestranteController.js"></script>
-    <script src="App/Controllers/Palestrante/PalestranteDetalheController.js"></script>
-    <script src="App/Controllers/Palestrante/PalestranteCadastrarController.js"></script>
-    <script src="App/Controllers/Palestrante/PalestranteExcluirController.js"></script>
+    <script src="App/sala/sala.controller.js"></script>
+    <script src="App/sala/sala-detalhe.controller.js"></script>
+    <script src="App/sala/sala-cadastrar.controller.js"></script>
+    <script src="App/sala/sala-excluir.controller.js"></script>
 
-    <script src="App/Controllers/Login/LoginController.js"></script>
-    <script src="App/Services/Api.js"></script>
-    <script src="App/Services/Autenticacao.js"></script>
-    <script src="App/Services/AccessLevel.js"></script>
-    <script src="App/Services/UsuarioLogado.js"></script>
+    <script src="App/login/login.controller.js"></script>
+
+    <script src="App/trilha/trilha.controller.js"></script>
+    <script src="App/trilha/trilha-detalhe.controller.js"></script>
+    <script src="App/trilha/trilha-cadastrar.controller.js"></script>
+    <script src="App/trilha/trilha-excluir.controller.js"></script>
+    <script src="App/trilha/trilha.service.js"></script>
+    
+    <script src="App/palestrante/palestrante.controller.js"></script>
+    <script src="App/palestrante/palestrante-detalhe.controller.js"></script>
+    <script src="App/palestrante/palestrante-cadastrar.controller.js"></script>
+    <script src="App/palestrante/palestrante-excluir.controller.js"></script>
+    <script src="App/palestrante/palestrante.service.js"></script>
+
+    <script src="App/components/autenticacao.service.js"></script>
+    <script src="App/components/acesso.directive.js"></script>
+    <script src="App/components/activenav.directive.js"></script>
+    <script src="App/components/UsuarioLogado.js"></script>
     <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+    <style type="text/css">
+        @charset "UTF-8";
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none;
+        }
+    </style>
 
 </head>
 <body>
     <div id="loader" class="alert alert-info" style="position: absolute; top: 5px; left: 50%; z-index: 10000; display: none; height: 44px;">
         <h4>Aguarde...</h4>
     </div>
+    <div class="alert" ng-class="alertType" ng-cloak>
+        {{alertMessage}}
+    </div>
+    <div class="progress" ng-class="active" ng-cloak>
+        <div class="progress-bar" style="width: 100%;"></div>
+    </div>
+    <br />
     <div class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">

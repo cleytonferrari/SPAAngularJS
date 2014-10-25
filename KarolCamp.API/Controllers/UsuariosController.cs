@@ -65,6 +65,23 @@ namespace KarolCamp.API.Controllers
         }
         #endregion
 
+
+        /*
+         * 
+            POST http://localhost:6882/api/usuarios/adicionar
+         
+            User-Agent: Fiddler
+            Host: localhost:6882
+            Content-Type: application/json
+            Content-Length: 47
+
+            {
+              UserName:'nailde',
+              PasswordHash:'171099'
+            }
+         
+         */
+
         [AllowAnonymous]
         [Route("Adicionar")]
         public async Task<IHttpActionResult> PostAdicionar(Usuario usuario)
