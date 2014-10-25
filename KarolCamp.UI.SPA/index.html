@@ -43,7 +43,10 @@
     <script src="App/components/acesso.directive.js"></script>
     <script src="App/components/activenav.directive.js"></script>
     <script src="App/components/UsuarioLogado.js"></script>
+    <script src="Scripts/nprogress.js"></script>
+
     <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+    <link href="Content/nprogress.css" rel="stylesheet" />
     <style type="text/css">
         @charset "UTF-8";
 
@@ -54,16 +57,7 @@
 
 </head>
 <body>
-    <div id="loader" class="alert alert-info" style="position: absolute; top: 5px; left: 50%; z-index: 10000; display: none; height: 44px;">
-        <h4>Aguarde...</h4>
-    </div>
-    <div class="alert" ng-class="alertType" ng-cloak>
-        {{alertMessage}}
-    </div>
-    <div class="progress" ng-class="active" ng-cloak>
-        <div class="progress-bar" style="width: 100%;"></div>
-    </div>
-    <br />
+    
     <div class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">

@@ -5977,7 +5977,7 @@ h1 small,
 }
 .navbar-static-top,
 .navbar-fixed-top {
-  border-top: 2px solid #7a62d3;
+  border-top: 3px solid  rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px -3px 12px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px -3px 12px rgba(0, 0, 0, 0.5);
   box-shadow: 0px -3px 12px rgba(0, 0, 0, 0.5);
