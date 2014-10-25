@@ -27,7 +27,7 @@
                 controller: 'SalaController',
                 access: 'logado',
                 resolve: {
-                    salasGetAll: function ($q, $route, $timeout, salaFactory) {
+                    salasGetAll: function ($q, $route, $timeout, SalaFactory) {
                         var deferred = $q.defer();
 
                         var sucessoCallBack = function (result) {
@@ -39,7 +39,7 @@
                         };
                         //Timeout para mostrar o carregamento, totalmente desnecessario
                         $timeout(function () {
-                            salaFactory.getAll(sucessoCallBack);
+                            SalaFactory.getAll(sucessoCallBack);
                         }, 1000);
 
                         return deferred.promise;
@@ -64,7 +64,26 @@
             .when('/Sala/:Id', {
                 templateUrl: 'App/sala/sala-detalhe.html',
                 controller: 'SalaDetalheController',
-                access: 'logado'
+                access: 'logado',
+                resolve: {
+                    salasGetById: function ($q, $route, $timeout, SalaFactory) {
+                        var deferred = $q.defer();
+                        var id = $route.current.params.Id;
+                        var sucessoCallBack = function (result) {
+                            if (angular.equals(result, [])) {
+                                deferred.reject("Sala não encontrada");
+                            } else {
+                                deferred.resolve(result);
+                            }
+                        };
+                        //Timeout para mostrar o carregamento, totalmente desnecessario
+                        $timeout(function () {
+                            SalaFactory.getById(id, sucessoCallBack);
+                        }, 1000);
+
+                        return deferred.promise;
+                    },
+                }
             })
             .when('/Trilha', {
                 templateUrl: 'App/trilha/trilha.html',

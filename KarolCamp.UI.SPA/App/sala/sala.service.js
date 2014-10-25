@@ -1,13 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('MyApp').factory('salaFactory', salaFactory);
+    angular.module('MyApp').factory('SalaFactory', salaFactory);
 
     salaFactory.$inject = ['$resource', '$http'];
     
     function salaFactory($resource, $http) {
         var resource = $resource('http://localhost:6882/api/salas/:Id', {}, {
-            query: { method: 'GET', params: { Id: '' }, isArray: true },
+            queryById: { method: 'GET', params: { Id: '' } },
             queryAll: { method: 'GET', isArray: true },
             update: { method: 'PUT', params: { Id: '@Id' } }
         });
@@ -19,7 +19,7 @@
         };
 
         resource.prototype.getById = function (id, successCb, failCb) {
-            resource.queryAll({ Id: id }, successCb, failCb);
+            resource.queryById({ Id: id }, successCb, failCb);
         };
 
         return new resource;

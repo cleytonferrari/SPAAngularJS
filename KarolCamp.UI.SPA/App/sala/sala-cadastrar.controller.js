@@ -3,11 +3,11 @@
 
     angular.module('MyApp').controller('SalaCadastrarController', SalaCadastrarController);
 
-    SalaCadastrarController.$inject = ['$scope', '$routeParams', '$location', 'Sala'];
+    SalaCadastrarController.$inject = ['$scope', '$routeParams', '$location', 'SalaFactory'];
 
-    function SalaCadastrarController($scope, $routeParams, $location, Sala) {
+    function SalaCadastrarController($scope, $routeParams, $location, SalaFactory) {
         if ($routeParams.Id != undefined) {
-            $scope.sala = Sala.get({ Id: $routeParams.Id });
+            $scope.sala = SalaFactory.get({ Id: $routeParams.Id });
         } else {
             $scope.sala = {};
         }
@@ -19,7 +19,7 @@
                         $location.path('/Sala');
                     });
                 } else {
-                    Sala.save({}, $scope.sala, function () {
+                    SalaFactory.save({}, $scope.sala, function () {
                         $location.path('/Sala');
                     });
                 }
